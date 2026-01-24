@@ -46,7 +46,7 @@ const userSchema = new mongoose.Schema(
     photoUrl: {
       type: String,
       validate(value) {
-        if (!isURL(value)) {
+        if (!validator.isURL(value)) {
           throw new Error("not a valid URL");
         }
       },
@@ -61,7 +61,7 @@ const userSchema = new mongoose.Schema(
   },
   {
     timestamps: true,
-  }
+  },
 );
 
 const User = mongoose.model("User", userSchema);

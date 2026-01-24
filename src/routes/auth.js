@@ -34,7 +34,7 @@ authRouter.post("/login", async (req, res) => {
     if (validPassword) {
       const token = await jwt.sign({ _id: user._id }, "DEV@tinder");
       res.cookie("token", token);
-      res.send("login successful");
+      res.send(user);
     } else {
       res.send("in valid credientials");
     }
