@@ -36,7 +36,7 @@ authRouter.post("/login", async (req, res) => {
       res.cookie("token", token);
       res.send(user);
     } else {
-      res.send("in valid credientials");
+      res.status(400).send("in valid credientials");
     }
   } catch (err) {
     res.status(400).send("ERROR: " + err.message);
