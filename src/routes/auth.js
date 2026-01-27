@@ -43,7 +43,7 @@ authRouter.post("/login", async (req, res) => {
   }
 });
 
-authRouter.get("/logout", (req, res) => {
+authRouter.post("/logout", (req, res) => {
   res
     .cookie("token", null, {
       expire: new Date(Date.now()),
